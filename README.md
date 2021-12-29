@@ -1,5 +1,5 @@
 # OpenMQ Project
-JMS SI (Specification Implementation)
+[Jakarta Messaging](https://jakarta.ee/specifications/messaging/) compatible implementation.
 
 The project contains the following modules:
 
