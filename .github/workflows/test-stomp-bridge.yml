@@ -112,7 +112,7 @@ jobs:
           shutdown bkr 2>/dev/null
     - name: Upload logs on failure
       uses: actions/upload-artifact@v4
-      if: failure()
+      if: always()
       with:
         name: test-stomp-bridge-logs
         path: |
