@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2000, 2020 Oracle and/or its affiliates. All rights reserved.
- * Copyright (c) 2021, 2024 Contributors to the Eclipse Foundation
+ * Copyright (c) 2021 Contributors to the Eclipse Foundation
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -1850,7 +1850,7 @@ public class Packet implements JMSPacket {
             offset = 0;
             length = abuf.length;
         }
-        readFully(in, abuf, offset, length, true);
+        PacketUtil.readFully(in, abuf, offset, length, true);
         b.rewind();
 
         // If we had to allocate the byte[] then copy data into ByteBuffer.
@@ -1860,46 +1860,6 @@ public class Packet implements JMSPacket {
             b.put(abuf);
         }
         return length;
-    }
-
-    /**
-     * Our own version of readFully(). This is identical to DataInputStream's except that we handle InterruptedIOException
-     * by doing a yield, and continuing trying to read. This is to handle the case where the socket has an SO_TIMEOUT set.
-     *
-     * If retry is false we abandon the read if it times out and we haven't read anything. If it is true we continue to
-     * retry the read.
-     */
-    private static void readFully(InputStream in, byte b[], int off, int len, boolean retry) throws IOException, EOFException, InterruptedIOException {
-
-        if (len < 0) {
-            throw new IndexOutOfBoundsException();
-        }
-
-        int n = 0;
-        int count;
-        while (n < len) {
-            count = 0;
-            try {
-                count = in.read(b, off + n, len - n);
-            } catch (InterruptedIOException e) {
-                // if we really have read nothing .. throw an ex
-                if (!retry && n == 0 && count == 0 && e.bytesTransferred == 0) {
-                    throw new InterruptedIOException("no data available");
-                }
-
-                count = e.bytesTransferred;
-                if (count < 0) { // should not happen
-                    throw new PacketReadEOFException("Trying to read " + (len - n) + " bytes, interrupted. Already read " + n + " bytes.");
-
-                }
-
-                Thread.yield();
-            }
-            if (count < 0) {
-                throw new PacketReadEOFException("Trying to read " + (len - n) + " bytes. Already read " + n + " bytes.");
-            }
-            n += count;
-        }
     }
 
     /**
