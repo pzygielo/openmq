@@ -41,6 +41,7 @@ import javax.transaction.xa.XAResource;
 import com.sun.messaging.jmq.io.JMQByteBufferInputStream;
 import com.sun.messaging.jmq.io.Packet;
 import com.sun.messaging.jmq.io.PacketType;
+import com.sun.messaging.jmq.io.PacketUtil;
 import com.sun.messaging.jmq.io.Status;
 import com.sun.messaging.jmq.io.SysMessageID;
 import com.sun.messaging.jmq.jmsserver.BrokerStateHandler;
@@ -463,7 +464,7 @@ public class TransactionHandler extends PacketHandler {
                                         (msg.getSendAcknowledge() ? BrokerResources.W_UNKNOWN_TRANSACTIONID_NOTIFY_CLIENT
                                                 : BrokerResources.W_UNKNOWN_TRANSACTIONID_NONOTIFY_CLIENT),
                                         "" + id + "(" + messagetid + ")" + (xid == null ? "" : "XID=" + xid), PacketType.getString(msg.getPacketType())) + "\n"
-                                        + com.sun.messaging.jmq.io.PacketUtil.dumpPacket(msg));
+                                        + PacketUtil.dumpPacket(msg));
                     }
 
                     // Only send reply if A bit is set
@@ -1178,7 +1179,7 @@ public class TransactionHandler extends PacketHandler {
                                     con.getConnectionUID().toString() };
                             String emsg = Globals.getBrokerResources().getKString(BrokerResources.W_PROCCESS_COMMITTED_ACK, args);
                             logger.logStack(Logger.WARNING,
-                                    emsg + "\n" + com.sun.messaging.jmq.io.PacketUtil.dumpPacket(msg) + "--------------------------------------------", ex);
+                                    emsg + "\n" + PacketUtil.dumpPacket(msg) + "--------------------------------------------", ex);
                         }
                     }
                 }

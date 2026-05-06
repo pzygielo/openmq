@@ -363,7 +363,7 @@ public class ConsumerHandler extends PacketHandler {
                             logger.log(Logger.ERROR,
                                     br.getKString(br.E_UNEXPECTED_EXCEPTION,
                                             br.getKString(br.E_DELETE_CONSUMER_NO_SESSION, (lsessionid == null ? "" : lsessionid), uid + "") + "\n"
-                                                    + com.sun.messaging.jmq.io.PacketUtil.dumpPacket(msg)));
+                                                    + PacketUtil.dumpPacket(msg)));
                             Session.dumpAll();
                         }
                     }

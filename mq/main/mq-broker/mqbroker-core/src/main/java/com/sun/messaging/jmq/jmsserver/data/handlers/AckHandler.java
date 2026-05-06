@@ -277,7 +277,7 @@ public class AckHandler extends PacketHandler {
                     logger.logStack(Logger.ERROR, BrokerResources.E_INTERNAL_BROKER_ERROR,
                             "-------------------------------------------" + "Internal Error: Invalid Acknowledge Packet processing\n" + " "
                                     + (msg.getSendAcknowledge() ? " notifying client\n" : " can not notify the client")
-                                    + com.sun.messaging.jmq.io.PacketUtil.dumpPacket(msg) + "--------------------------------------------",
+                                    + PacketUtil.dumpPacket(msg) + "--------------------------------------------",
                             thr);
                 }
             }
