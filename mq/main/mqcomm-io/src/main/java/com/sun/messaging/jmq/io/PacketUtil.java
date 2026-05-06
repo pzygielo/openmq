@@ -25,7 +25,10 @@ import java.io.*;
 import com.sun.messaging.jmq.util.JMQXid;
 import com.sun.messaging.jmq.util.io.FilteringObjectInputStream;
 
-public class PacketUtil {
+public final class PacketUtil {
+    private PacketUtil() {
+        throw new UnsupportedOperationException();
+    }
 
     /**
      * Dump the body of the packet.
