@@ -19,3 +19,6 @@ f674a0e3bca520ef54b1313609afc5a9e5b4fbca
 # Restore pre-'Full code base formatting for Java files' formats
 9e23dc18e992882dea54044949975f5741936272
 c5236a3e6bef9423ece0f5b9199251eb354eaf23
+
+# Extract `mqcomm-jmsselector` module
+f3800c3acc7d3de6756cf6202d73854567810f13
