@@ -491,7 +491,6 @@
            	<include name="com/sun/messaging/jmq/net/**/**"/>   
            	<include name="com/sun/messaging/jmq/util/**/**"/>   
            	<include name="com/sun/messaging/jmq/resources/**/**"/>   
-           	<include name="com/sun/messaging/jmq/jmsselector/**/**"/>   
 	</fileset>
         <manifest file="${classes.dir}/imqutil.mf">
                <attribute name="Built-By" value="${user.name}"/>
@@ -508,7 +507,6 @@
                <section name="com/sun/messaging/jmq/net"/>
                <section name="com/sun/messaging/jmq/util"/>
                <section name="com/sun/messaging/jmq/resources"/>
-               <section name="com/sun/messaging/jmq/jmsselector"/>
         </manifest>  
 	<jar destfile="${classes.dir}/imqutil.jar" manifest="${classes.dir}/imqutil.mf" >
 		      <fileset refid="mq.util.fileset"/>			
@@ -841,7 +839,6 @@
            <include name="com/sun/messaging/naming/**/**"/>   
            <include name="com/sun/messaging/jmq/jmsclient/**/**"/>   
            <include name="com/sun/messaging/jmq/auth/**/**"/>   
-           <include name="com/sun/messaging/jmq/jmsselector/**/**"/>   
            <include name="com/sun/messaging/jmq/admin/**/**"/>   
            <include name="com/sun/messaging/jmq/jmsservice/**/**"/>   
            <include name="com/sun/messaging/jmq/httptunnel/tunnel/*.class"/>   
@@ -891,7 +888,6 @@
            <include name="com/sun/messaging/naming/**/**"/>
            <include name="com/sun/messaging/jmq/jmsclient/**/**"/>
            <include name="com/sun/messaging/jmq/auth/**/**"/>
-           <include name="com/sun/messaging/jmq/jmsselector/**/**"/>
            <include name="com/sun/messaging/jmq/admin/**/**"/>
            <include name="com/sun/messaging/jmq/jmsservice/**/**"/>
 	   <include name="com/sun/messaging/portunif/*.class"/>

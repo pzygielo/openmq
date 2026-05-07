@@ -211,7 +211,6 @@ JMQUTILJAR_MNAME1=com/sun/messaging/jmq/io
 JMQUTILJAR_MNAME2=com/sun/messaging/jmq/net
 JMQUTILJAR_MNAME3=com/sun/messaging/jmq/util
 JMQUTILJAR_MNAME4=com/sun/messaging/jmq/resources
-JMQUTILJAR_MNAME5=com/sun/messaging/jmq/jmsselector
 
 #---------------
 # jmqservlet.jar
