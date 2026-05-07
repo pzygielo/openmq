@@ -70,6 +70,8 @@ import com.sun.messaging.jmq.util.BrokerExitCode;
 import com.sun.messaging.jmq.util.DestType;
 import com.sun.messaging.jmq.util.admin.DestinationInfo;
 import com.sun.messaging.jmq.util.admin.MessageType;
+import com.sun.messaging.jmq.util.selector.Selector;
+import com.sun.messaging.jmq.util.selector.SelectorFormatException;
 
 @SuppressWarnings("JdkObsolete")
 public class JMSAdminImpl implements JMSAdmin, ExceptionListener {
@@ -259,10 +261,9 @@ public class JMSAdminImpl implements JMSAdmin, ExceptionListener {
 
     @Override
     public void validateJMSSelector(String selector) throws JMSException {
-        com.sun.messaging.jmq.jmsselector.JMSSelector jmsselector = new com.sun.messaging.jmq.jmsselector.JMSSelector();
         try {
-            jmsselector.validateSelectorPattern(selector);
-        } catch (com.sun.messaging.jmq.jmsselector.InvalidJMSSelectorException e) {
+            Selector.compile(selector);
+        } catch (SelectorFormatException e) {
             throw new InvalidSelectorException(e.getMessage());
         } catch (Exception e) {
             throw new JMSException(e.getMessage());
