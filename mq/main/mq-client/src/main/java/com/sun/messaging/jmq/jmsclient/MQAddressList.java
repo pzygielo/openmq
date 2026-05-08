@@ -81,13 +81,5 @@ public class MQAddressList extends com.sun.messaging.jmq.io.MQAddressList {
 
         return ret.toString();
     }
-
-    public static void main(String[] args) throws Exception {
-        MQAddressList list = createMQAddressList(args[0]);
-        if (System.getProperty("test.random") != null) {
-            list.setBehavior(RANDOM);
-        }
-        System.out.println(list);
-    }
 }
 
