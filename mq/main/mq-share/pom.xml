@@ -74,7 +74,9 @@
                         <phase>process-sources</phase>
                         <configuration>
                             <target>
-                                <tstamp />
+                                <tstamp>
+                                    <format property="TODAY_ISO_8601" pattern="yyyy-MM-dd" />
+                                </tstamp>
                                 <delete
                                     file="${project.build.outputDirectory}/com/sun/messaging/jmq/version.properties" />
                                 <copy file="src/main/java/com/sun/messaging/jmq/version.template"
@@ -90,7 +92,7 @@
                                         <filter token="JMS_VERSION" value="${jakarta-jms.version}" />
                                         <filter token="PRODUCT_NAME" value="${product.name}" />
                                         <filter token="PRODUCT_ABBREVNAME" value="${product.abbrevname}" />
-                                        <filter token="DATE" value="${TODAY}" />
+                                        <filter token="DATE" value="${TODAY_ISO_8601}" />
                                         <filter token="COPYRIGHT" value="${product.copyright}" />
                                     </filterset>
                                 </copy>
