@@ -32,8 +32,6 @@ public class MQAddressList extends com.sun.messaging.jmq.io.MQAddressList {
     public static final int PRIORITY = 1;
     public static final int RANDOM = 2;
 
-    private int behavior;
-
     @Override
     protected com.sun.messaging.jmq.io.MQAddress createMQAddress(String s) throws java.net.MalformedURLException {
         return com.sun.messaging.jmq.jmsclient.MQAddress.createMQAddress(s);
@@ -50,13 +48,7 @@ public class MQAddressList extends com.sun.messaging.jmq.io.MQAddressList {
         return alist;
     }
 
-    public int getBehavior() {
-        return behavior;
-    }
-
     public void setBehavior(int behavior) {
-        this.behavior = behavior;
-
         if (behavior == RANDOM) {
             // Randomize the sequence.
             Random r = new Random();
