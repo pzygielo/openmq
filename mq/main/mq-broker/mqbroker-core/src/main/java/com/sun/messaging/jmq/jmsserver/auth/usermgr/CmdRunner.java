@@ -556,8 +556,7 @@ public class CmdRunner {
         try (FileReader fr = new FileReader(f); BufferedReader bfr = new BufferedReader(fr)) {
             ret = bfr.readLine();
         } catch (Exception e) {
-            UserMgrException ume = new UserMgrException(UserMgrException.READ_PASSFILE_FAIL);
-            ume.setProperties(userMgrProps);
+            UserMgrException ume = new UserMgrException(UserMgrException.READ_PASSFILE_FAIL, userMgrProps);
             ume.setLinkedException(e);
             throw (ume);
         }

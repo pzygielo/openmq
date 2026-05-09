@@ -159,8 +159,7 @@ public class UserMgr {
 
         if (cmd == null) {
             UserMgrException objMgrEx;
-            objMgrEx = new UserMgrException(UserMgrException.NO_CMD_SPEC);
-            objMgrEx.setProperties(userMgrProps);
+            objMgrEx = new UserMgrException(UserMgrException.NO_CMD_SPEC, userMgrProps);
 
             throw (objMgrEx);
         }
@@ -196,8 +195,7 @@ public class UserMgr {
 
         } else {
             UserMgrException objMgrEx;
-            objMgrEx = new UserMgrException(UserMgrException.BAD_CMD_SPEC);
-            objMgrEx.setProperties(userMgrProps);
+            objMgrEx = new UserMgrException(UserMgrException.BAD_CMD_SPEC, userMgrProps);
 
             throw (objMgrEx);
         }
@@ -301,8 +299,7 @@ public class UserMgr {
         String passwd = userMgrProps.getPassword(), passfile = userMgrProps.getPassfile();
 
         if ((passwd == null) && (passfile == null)) {
-            ex = new UserMgrException(UserMgrException.PASSWD_NOT_SPEC);
-            ex.setProperties(userMgrProps);
+            ex = new UserMgrException(UserMgrException.PASSWD_NOT_SPEC, userMgrProps);
 
             throw (ex);
         }
@@ -315,8 +312,7 @@ public class UserMgr {
         String passwd = userMgrProps.getPassword(), passfile = userMgrProps.getPassfile(), activeValue = userMgrProps.getActiveValue();
 
         if ((passfile == null) && (passwd == null) && (activeValue == null)) {
-            ex = new UserMgrException(UserMgrException.PASSWD_OR_ACTIVE_NOT_SPEC);
-            ex.setProperties(userMgrProps);
+            ex = new UserMgrException(UserMgrException.PASSWD_OR_ACTIVE_NOT_SPEC, userMgrProps);
 
             throw (ex);
         }
@@ -337,8 +333,7 @@ public class UserMgr {
             return;
         }
 
-        ex = new UserMgrException(UserMgrException.BAD_ACTIVE_VALUE_SPEC);
-        ex.setProperties(userMgrProps);
+        ex = new UserMgrException(UserMgrException.BAD_ACTIVE_VALUE_SPEC, userMgrProps);
         throw (ex);
     }
 
@@ -354,8 +349,7 @@ public class UserMgr {
             return;
         }
 
-        ex = new UserMgrException(UserMgrException.ACTIVE_NOT_VALID_WITH_ADD);
-        ex.setProperties(userMgrProps);
+        ex = new UserMgrException(UserMgrException.ACTIVE_NOT_VALID_WITH_ADD, userMgrProps);
 
         throw (ex);
     }
@@ -370,8 +364,7 @@ public class UserMgr {
          */
         if (srcFile == null) {
 
-            ex = new UserMgrException(UserMgrException.SRC_FILE_NOT_SPEC);
-            ex.setProperties(userMgrProps);
+            ex = new UserMgrException(UserMgrException.SRC_FILE_NOT_SPEC, userMgrProps);
 
             throw (ex);
         }
@@ -419,22 +412,19 @@ public class UserMgr {
         String userName = userMgrProps.getUserName();
 
         if (userName == null) {
-            UserMgrException ex = new UserMgrException(UserMgrException.USERNAME_NOT_SPEC);
-            ex.setProperties(userMgrProps);
+            UserMgrException ex = new UserMgrException(UserMgrException.USERNAME_NOT_SPEC, userMgrProps);
 
             throw (ex);
         }
 
         if (userName.length() == 0) {
-            UserMgrException ex = new UserMgrException(UserMgrException.USERNAME_IS_EMPTY);
-            ex.setProperties(userMgrProps);
+            UserMgrException ex = new UserMgrException(UserMgrException.USERNAME_IS_EMPTY, userMgrProps);
 
             throw (ex);
         }
 
         if (!isValidUserName(userName)) {
-            UserMgrException ex = new UserMgrException(UserMgrException.ILLEGAL_USERNAME);
-            ex.setProperties(userMgrProps);
+            UserMgrException ex = new UserMgrException(UserMgrException.ILLEGAL_USERNAME, userMgrProps);
 
             throw (ex);
         }
@@ -473,15 +463,13 @@ public class UserMgr {
             createpwdFileIfNotExist = false;
             if (!dir.exists()) {
                 if (errorIfNotExists) {
-                    UserMgrException ex = new UserMgrException(UserMgrException.INSTANCE_NOT_EXISTS);
-                    ex.setProperties(userMgrProps);
+                    UserMgrException ex = new UserMgrException(UserMgrException.INSTANCE_NOT_EXISTS, userMgrProps);
                     throw (ex);
                 } else {
                     try {
                         Broker.initializePasswdFile();
                     } catch (IOException iex) {
-                        UserMgrException ex = new UserMgrException(UserMgrException.CANT_CREATE_INSTANCE, iex);
-                        ex.setProperties(userMgrProps);
+                        UserMgrException ex = new UserMgrException(UserMgrException.CANT_CREATE_INSTANCE, iex, userMgrProps);
                         throw (ex);
                     }
                 }
@@ -496,14 +484,12 @@ public class UserMgr {
                     pwfile.createNewFile();
                     userMgrProps.setPasswordFile(FileUtil.getCanonicalPath(pwfile.toString()));
                 } catch (IOException e) {
-                    UserMgrException ex = new UserMgrException(UserMgrException.CANT_CREATE_PWFILE, e);
-                    ex.setProperties(userMgrProps);
+                    UserMgrException ex = new UserMgrException(UserMgrException.CANT_CREATE_PWFILE, e, userMgrProps);
                     ex.setPasswordFile(FileUtil.getCanonicalPath(pwfile.toString()));
                     throw (ex);
                 }
             } else {
-                UserMgrException ex = new UserMgrException(UserMgrException.PW_FILE_NOT_FOUND);
-                ex.setProperties(userMgrProps);
+                UserMgrException ex = new UserMgrException(UserMgrException.PW_FILE_NOT_FOUND, userMgrProps);
                 ex.setPasswordFile(FileUtil.getCanonicalPath(pwfile.toString()));
                 throw (ex);
             }
@@ -531,8 +517,7 @@ public class UserMgr {
         String role = userMgrProps.getRole();
 
         if (role == null) {
-            ex = new UserMgrException(UserMgrException.ROLE_NOT_SPEC);
-            ex.setProperties(userMgrProps);
+            ex = new UserMgrException(UserMgrException.ROLE_NOT_SPEC, userMgrProps);
 
             throw (ex);
         }
@@ -543,8 +528,7 @@ public class UserMgr {
             }
         }
 
-        ex = new UserMgrException(UserMgrException.INVALID_ROLE_SPEC);
-        ex.setProperties(userMgrProps);
+        ex = new UserMgrException(UserMgrException.INVALID_ROLE_SPEC, userMgrProps);
 
         throw (ex);
     }

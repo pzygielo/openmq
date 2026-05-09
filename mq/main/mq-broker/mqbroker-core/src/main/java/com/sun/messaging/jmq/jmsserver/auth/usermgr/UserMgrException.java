@@ -66,24 +66,29 @@ public class UserMgrException extends Exception {
     /**
      * Props object encapsulating the user specified options/commands.
      **/
-    private UserMgrProperties userMgrProps;
+    private final UserMgrProperties userMgrProps;
     private String pwFile, userName;
     private Exception linkedEx;
-    private int type;
+    private final int type;
 
     /**
      * Constructs an UserMgrException with type
      *
      * @param type type of exception
      **/
-    public UserMgrException(int type) {
+    UserMgrException(int type) {
         userMgrProps = null;
         this.type = type;
     }
 
-    public UserMgrException(int type, Throwable thr) {
+    UserMgrException(int type, UserMgrProperties userMgrProperties) {
+        this.userMgrProps = userMgrProperties;
+        this.type = type;
+    }
+
+    UserMgrException(int type, Throwable thr, UserMgrProperties userMgrProperties) {
         super(thr);
-        userMgrProps = null;
+        this.userMgrProps = userMgrProperties;
         this.type = type;
     }
 
@@ -94,15 +99,6 @@ public class UserMgrException extends Exception {
      **/
     public synchronized UserMgrProperties getProperties() {
         return (userMgrProps);
-    }
-
-    /**
-     * Sets the properties object that encapsulates the user specified options/commands.
-     *
-     * @param p the properties object that encapsulates the user specified options/commands.
-     **/
-    public synchronized void setProperties(UserMgrProperties p) {
-        userMgrProps = p;
     }
 
     /**

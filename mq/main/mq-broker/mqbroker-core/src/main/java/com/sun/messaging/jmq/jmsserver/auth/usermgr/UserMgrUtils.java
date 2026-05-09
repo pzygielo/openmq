@@ -54,8 +54,7 @@ public class UserMgrUtils {
             return (s);
 
         } catch (IOException ioex) {
-            UserMgrException ex = new UserMgrException(UserMgrException.PROBLEM_GETTING_INPUT);
-            ex.setProperties(userMgrProps);
+            UserMgrException ex = new UserMgrException(UserMgrException.PROBLEM_GETTING_INPUT, userMgrProps);
             ex.setLinkedException(ioex);
 
             throw (ex);
