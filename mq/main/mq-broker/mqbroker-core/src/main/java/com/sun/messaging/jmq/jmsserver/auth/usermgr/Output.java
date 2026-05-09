@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2000, 2017 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2026 Contributors to the Eclipse Foundation
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -34,16 +35,8 @@ public class Output {
         doPrintln(System.err, msg);
     }
 
-    public static void stdErrPrint(String msg) {
-        doPrint(System.err, msg);
-    }
-
     public static void stdErrPrintln(String type, String msg) {
         doPrintln(System.err, type + " " + msg);
-    }
-
-    public static void stdErrPrint(String type, String msg) {
-        doPrint(System.err, type + " " + msg);
     }
 
     public static void stdOutPrintln(String msg) {
@@ -52,14 +45,6 @@ public class Output {
 
     public static void stdOutPrint(String msg) {
         doPrint(System.out, msg);
-    }
-
-    public static void stdOutPrintln(String type, String msg) {
-        doPrintln(System.out, type + " " + msg);
-    }
-
-    public static void stdOutPrint(String type, String msg) {
-        doPrint(System.out, type + " " + msg);
     }
 
     private static void doPrintln(PrintStream out, String msg) {
