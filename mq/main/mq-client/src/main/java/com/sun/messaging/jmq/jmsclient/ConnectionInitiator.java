@@ -435,13 +435,6 @@ public class ConnectionInitiator {
     }
 
     /**
-     * This validates if the address list fulfils HAWK HA requirement.
-     */
-    private void validate() {
-        // validate if all MQAddress use the same service.
-    }
-
-    /**
      * Create an AddressList object from the address list string
      *
      * @param addrString String
@@ -455,7 +448,6 @@ public class ConnectionInitiator {
 
         if (addrString != null && !addrString.equals("")) {
             aList = MQAddressList.createMQAddressList(addrString);
-            validate();
         }
 
         setBehavior(aList);
