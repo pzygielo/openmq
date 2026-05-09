@@ -72,13 +72,6 @@ public class UserMgrException extends Exception {
     private int type;
 
     /**
-     * Constructs an UserMgrException
-     */
-    public UserMgrException() {
-        userMgrProps = null;
-    }
-
-    /**
      * Constructs an UserMgrException with type
      *
      * @param type type of exception
@@ -90,22 +83,6 @@ public class UserMgrException extends Exception {
 
     public UserMgrException(int type, Throwable thr) {
         super(thr);
-        userMgrProps = null;
-        this.type = type;
-    }
-
-    /**
-     * Constructs an UserMgrException with reason
-     *
-     * @param reason a description of the exception
-     **/
-    public UserMgrException(String reason) {
-        super(reason);
-        userMgrProps = null;
-    }
-
-    public UserMgrException(int type, String reason) {
-        super(reason);
         userMgrProps = null;
         this.type = type;
     }
