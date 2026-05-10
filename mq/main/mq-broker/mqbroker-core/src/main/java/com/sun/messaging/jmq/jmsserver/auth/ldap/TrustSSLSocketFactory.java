@@ -52,17 +52,11 @@ public abstract class TrustSSLSocketFactory extends SSLSocketFactory {
         SSLContext ctx = SSLContext.getInstance("TLS");
         TrustManager[] tm = new TrustManager[1];
         tm[0] = new X509TrustManager() {
-            /*
-             * Unused public void checkClientTrusted(X509Certificate[] chain) { return; }
-             */
             @Override
             public void checkClientTrusted(X509Certificate[] chain, String type) {
                 return;
             }
 
-            /*
-             * Unused public void checkServerTrusted(X509Certificate[] chain) { return; }
-             */
             @Override
             public void checkServerTrusted(X509Certificate[] chain, String type) {
                 return;
