@@ -17,6 +17,10 @@
 
 package com.sun.messaging.jmq.jmsserver.auth.ldap;
 
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.X509Certificate;
+
 import javax.net.SocketFactory;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocketFactory;
@@ -36,36 +40,36 @@ public abstract class TrustSSLSocketFactory extends SSLSocketFactory {
 
             return getTrustSocketFactory();
 
-        } catch (java.security.NoSuchAlgorithmException | java.security.KeyManagementException e) {
+        } catch (NoSuchAlgorithmException | KeyManagementException e) {
             Globals.getLogger().log(Logger.ERROR, e.getMessage(), e);
         }
 
         return null;
     }
 
-    private static SSLSocketFactory getTrustSocketFactory() throws java.security.NoSuchAlgorithmException, java.security.KeyManagementException {
+    private static SSLSocketFactory getTrustSocketFactory() throws NoSuchAlgorithmException, KeyManagementException {
 
         SSLContext ctx = SSLContext.getInstance("TLS");
         TrustManager[] tm = new TrustManager[1];
         tm[0] = new X509TrustManager() {
             /*
-             * Unused public void checkClientTrusted(java.security.cert.X509Certificate[] chain) { return; }
+             * Unused public void checkClientTrusted(X509Certificate[] chain) { return; }
              */
             @Override
-            public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String type) {
+            public void checkClientTrusted(X509Certificate[] chain, String type) {
                 return;
             }
 
             /*
-             * Unused public void checkServerTrusted(java.security.cert.X509Certificate[] chain) { return; }
+             * Unused public void checkServerTrusted(X509Certificate[] chain) { return; }
              */
             @Override
-            public void checkServerTrusted(java.security.cert.X509Certificate[] chain, String type) {
+            public void checkServerTrusted(X509Certificate[] chain, String type) {
                 return;
             }
 
             @Override
-            public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+            public X509Certificate[] getAcceptedIssuers() {
                 return null;
             }
         };
