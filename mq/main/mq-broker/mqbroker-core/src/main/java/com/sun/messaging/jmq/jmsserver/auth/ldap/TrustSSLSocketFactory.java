@@ -17,8 +17,12 @@
 
 package com.sun.messaging.jmq.jmsserver.auth.ldap;
 
-import javax.net.*;
-import javax.net.ssl.*;
+import javax.net.SocketFactory;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+
 import com.sun.messaging.jmq.jmsserver.Globals;
 import com.sun.messaging.jmq.util.log.Logger;
 
