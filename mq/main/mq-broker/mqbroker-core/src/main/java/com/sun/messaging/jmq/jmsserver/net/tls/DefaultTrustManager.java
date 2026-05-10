@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2000, 2017 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2026 Contributors to the Eclipse Foundation
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -40,20 +41,8 @@ public class DefaultTrustManager implements X509TrustManager {
     private static boolean DEBUG = false;
     Logger logger = Globals.getLogger();
 
-    public void checkClientTrusted(java.security.cert.X509Certificate[] chain) {
-        return;
-    }
-
     @Override
     public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String type) {
-        return;
-    }
-
-    public void checkServerTrusted(java.security.cert.X509Certificate[] chain) {
-        if (DEBUG) {
-            logger.log(Logger.DEBUGHIGH, "DefaultTrustManager called to validate certs ..");
-            logger.log(Logger.DEBUGHIGH, "returning 'true' for isServerTrusted call ...");
-        }
         return;
     }
 
