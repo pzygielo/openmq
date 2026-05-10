@@ -228,8 +228,6 @@ jobs:
           -Dimq.user_repository.ldap.base=ou=people,dc=openmq,dc=eclipse,dc=org \
           -Dimq.user_repository.ldap.uidattr=uid \
           -Dimq.user_repository.ldap.ssl.enabled=true \
-          -Dimq.user_repository.ldap.principal=cn=root \
-          -Dimq.user_repository.ldap.password=password \
           -Dimq.user_repository.ldap.ssl.socketfactory=com.sun.messaging.jmq.jmsserver.auth.ldap.TrustSSLSocketFactory \
           -varhome mqvar > mq-current/brokerd.log 2>&1 &
         while [ true ]
