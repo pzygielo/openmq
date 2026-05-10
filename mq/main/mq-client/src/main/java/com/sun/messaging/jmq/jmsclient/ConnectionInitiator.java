@@ -32,6 +32,13 @@ import java.util.logging.Level;
  * This class encapsulates the connection establishment, reconnect and failover logic.
  */
 public class ConnectionInitiator {
+    // ha reconnect delay
+    public static final int HA_RECONNECT_DELAY = 3000;
+
+    private static final String PRIORITY = "PRIORITY";
+
+    private static final String RANDOM = "RANDOM";
+
     private ConnectionImpl connection = null;
     // private int next = 0;
     private MQAddressList addrList = null;
@@ -46,14 +53,7 @@ public class ConnectionInitiator {
     private int addressListIterations = 0;
     private boolean debug = Debug.debug;
 
-    private static final String PRIORITY = "PRIORITY";
-
-    private static final String RANDOM = "RANDOM";
-
     private String defaultService = StandardServiceName.JMS_SERVICE_NAME;
-
-    // ha reconnect delay
-    public static final int HA_RECONNECT_DELAY = 3000;
 
     // set to true if not to use the list returned in HELLO_REPLY.
     private boolean useStaticAddressList = false;
