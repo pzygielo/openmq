@@ -29,7 +29,7 @@
 
     <artifactId>mqcomm-util</artifactId>
 
-    <name>MQ Common Util Module</name>
+    <name>MQ Common Util</name>
 
     <properties>
         <ws.binary.share.dir>../../binary/share</ws.binary.share.dir>

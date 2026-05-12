@@ -28,7 +28,7 @@
 
     <artifactId>mqcomm-lists</artifactId>
 
-    <name>MQ Common Lists Module</name>
+    <name>MQ Common Lists</name>
 
     <properties>
         <ws.binary.share.dir>../../binary/share</ws.binary.share.dir>

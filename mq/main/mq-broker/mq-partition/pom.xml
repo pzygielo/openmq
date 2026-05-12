@@ -29,7 +29,7 @@
     <artifactId>mq-partition</artifactId>
     <packaging>pom</packaging>
 
-    <name>MQ Partition Modules</name>
+    <name>MQ Partition</name>
 
     <modules>
         <module>mqpartition-persist-api</module>

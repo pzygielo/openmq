@@ -29,7 +29,7 @@
 
     <artifactId>mqbridge-jms</artifactId>
 
-    <name>MQ Bridge JMS Module</name>
+    <name>MQ Bridge JMS</name>
 
     <properties>
         <ws.binary.share.dir>../../../binary/share</ws.binary.share.dir>

@@ -28,7 +28,7 @@
 
     <artifactId>mqcomm-options</artifactId>
 
-    <name>MQ Common Options Module</name>
+    <name>MQ Common Options</name>
 
     <properties>
         <ws.binary.share.dir>../../binary/share</ws.binary.share.dir>

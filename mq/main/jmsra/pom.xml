@@ -29,7 +29,7 @@
     <artifactId>jmsra</artifactId>
     <packaging>pom</packaging>
 
-    <name>MQ JMSRA Modules</name>
+    <name>MQ JMSRA</name>
 
     <modules>
         <module>mqjmsra-api</module>

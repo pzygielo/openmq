@@ -29,7 +29,7 @@
 
     <artifactId>mqpartition-persist-jdbc</artifactId>
 
-    <name>MQ Partition Persist JDBC Module</name>
+    <name>MQ Partition Persist JDBC</name>
 
     <properties>
         <ws.binary.share.dir>../../../../binary/share</ws.binary.share.dir>

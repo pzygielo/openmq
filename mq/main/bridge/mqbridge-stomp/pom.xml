@@ -29,7 +29,7 @@
 
     <artifactId>mqbridge-stomp</artifactId>
 
-    <name>MQ Bridge STOMP Module</name>
+    <name>MQ Bridge STOMP</name>
 
     <properties>
         <ws.binary.share.dir>../../../binary/share</ws.binary.share.dir>

@@ -30,7 +30,7 @@
 
     <artifactId>mqbridge-admin</artifactId>
 
-    <name>MQ Bridge Admin Module</name>
+    <name>MQ Bridge Admin</name>
 
     <properties>
         <ws.binary.share.dir>../../../binary/share</ws.binary.share.dir>

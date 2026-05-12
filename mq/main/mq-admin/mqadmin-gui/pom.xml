@@ -29,7 +29,7 @@
 
     <artifactId>mqadmin-gui</artifactId>
 
-    <name>MQ Admin GUI Module</name>
+    <name>MQ Admin GUI</name>
 
     <properties>
         <ws.binary.share.dir>../../../binary/share</ws.binary.share.dir>

@@ -29,7 +29,7 @@
 
     <artifactId>mqjmsra-ra</artifactId>
 
-    <name>MQ JMSRA RA Module</name>
+    <name>MQ JMSRA RA</name>
 
     <properties>
         <ws.binary.share.dir>../../../binary/share</ws.binary.share.dir>

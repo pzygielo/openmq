@@ -29,7 +29,7 @@
 
     <artifactId>mqhttp-tunnel</artifactId>
 
-    <name>MQ HTTP Tunnel Module</name>
+    <name>MQ HTTP Tunnel</name>
 
     <properties>
         <ws.binary.share.dir>../../../binary/share</ws.binary.share.dir>

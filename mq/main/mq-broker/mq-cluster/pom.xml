@@ -29,7 +29,7 @@
 
     <artifactId>mq-cluster</artifactId>
 
-    <name>MQ Cluster Module</name>
+    <name>MQ Cluster</name>
 
     <properties>
         <ws.binary.share.dir>../../../binary/share</ws.binary.share.dir>

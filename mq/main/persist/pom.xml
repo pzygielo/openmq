@@ -29,7 +29,7 @@
     <artifactId>persist</artifactId>
     <packaging>pom</packaging>
 
-    <name>MQ Persistence Modules</name>
+    <name>MQ Persistence</name>
 
     <modules>
         <module>mqdisk-io</module>

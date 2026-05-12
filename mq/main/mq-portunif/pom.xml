@@ -29,7 +29,7 @@
 
     <artifactId>mq-portunif</artifactId>
 
-    <name>MQ Port Unification Module</name>
+    <name>MQ Port Unification</name>
 
     <properties>
         <ws.binary.share.dir>../../binary/share</ws.binary.share.dir>

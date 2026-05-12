@@ -29,7 +29,7 @@
     <artifactId>bridge</artifactId>
     <packaging>pom</packaging>
 
-    <name>MQ Bridge Modules</name>
+    <name>MQ Bridge</name>
 
     <modules>
         <module>mqbridge-api</module>

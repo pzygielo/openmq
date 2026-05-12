@@ -29,7 +29,7 @@
 
     <artifactId>mqbridge-api</artifactId>
 
-    <name>MQ Bridge API Module</name>
+    <name>MQ Bridge API</name>
 
     <properties>
         <ws.binary.share.dir>../../../binary/share</ws.binary.share.dir>

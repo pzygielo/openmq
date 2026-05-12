@@ -28,7 +28,7 @@
 
     <artifactId>mqcomm-selector</artifactId>
 
-    <name>MQ Common Selector Module</name>
+    <name>MQ Common Selector</name>
 
     <properties>
         <ws.binary.share.dir>../../binary/share</ws.binary.share.dir>

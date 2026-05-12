@@ -29,7 +29,7 @@
     <artifactId>mq-admin</artifactId>
     <packaging>pom</packaging>
 
-    <name>MQ Admin Modules</name>
+    <name>MQ Admin</name>
 
     <modules>
         <module>mqadmin-cli</module>

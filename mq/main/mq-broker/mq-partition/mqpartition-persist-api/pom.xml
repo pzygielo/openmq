@@ -29,7 +29,7 @@
 
     <artifactId>mqpartition-persist-api</artifactId>
 
-    <name>MQ Partition Persist API Module</name>
+    <name>MQ Partition Persist API</name>
 
     <properties>
         <ws.binary.share.dir>../../../../binary/share</ws.binary.share.dir>

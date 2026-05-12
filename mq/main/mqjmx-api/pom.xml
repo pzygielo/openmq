@@ -29,7 +29,7 @@
 
     <artifactId>mqjmx-api</artifactId>
 
-    <name>MQ JMX API Module</name>
+    <name>MQ JMX API</name>
 
     <properties>
         <ws.binary.share.dir>../../binary/share</ws.binary.share.dir>

@@ -28,7 +28,7 @@
 
     <artifactId>mqbroker-core</artifactId>
 
-    <name>MQ Broker Core Module</name>
+    <name>MQ Broker Core</name>
 
     <properties>
         <ws.binary.share.dir>../../../binary/share</ws.binary.share.dir>

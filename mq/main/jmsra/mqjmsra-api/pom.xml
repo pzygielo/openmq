@@ -29,7 +29,7 @@
 
     <artifactId>mqjmsra-api</artifactId>
 
-    <name>MQ JMSRA Internal API Module</name>
+    <name>MQ JMSRA Internal API</name>
 
     <properties>
         <ws.binary.share.dir>../../../binary/share</ws.binary.share.dir>

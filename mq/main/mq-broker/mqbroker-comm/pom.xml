@@ -29,7 +29,7 @@
 
     <artifactId>mqbroker-comm</artifactId>
 
-    <name>MQ Broker Common Module</name>
+    <name>MQ Broker Common</name>
 
     <properties>
         <ws.binary.share.dir>../../../binary/share</ws.binary.share.dir>

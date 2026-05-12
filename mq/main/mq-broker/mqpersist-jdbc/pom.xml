@@ -29,7 +29,7 @@
 
     <artifactId>mqpersist-jdbc</artifactId>
 
-    <name>MQ Broker jdbc Persist Module</name>
+    <name>MQ Broker jdbc Persist</name>
 
     <properties>
         <ws.binary.share.dir>../../../binary/share</ws.binary.share.dir>

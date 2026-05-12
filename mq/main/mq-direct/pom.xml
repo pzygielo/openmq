@@ -29,7 +29,7 @@
 
     <artifactId>mq-direct</artifactId>
 
-    <name>MQ Direct Internal API Module</name>
+    <name>MQ Direct Internal API</name>
 
     <properties>
         <ws.binary.share.dir>../../binary/share</ws.binary.share.dir>

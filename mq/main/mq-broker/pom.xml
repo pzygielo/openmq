@@ -29,7 +29,7 @@
     <artifactId>mq-broker</artifactId>
     <packaging>pom</packaging>
 
-    <name>MQ Broker Modules</name>
+    <name>MQ Broker</name>
 
     <modules>
         <module>mqbroker-comm</module>
