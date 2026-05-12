@@ -19,6 +19,8 @@ package com.sun.messaging.jmq.admin.resources;
 
 import java.util.ResourceBundle;
 import java.util.Locale;
+import java.util.Objects;
+
 import com.sun.messaging.jmq.util.MQResourceBundle;
 
 /**
@@ -30,14 +32,8 @@ public class AdminResources extends MQResourceBundle {
 
     private static AdminResources resources = null;
 
-    public static AdminResources getResources() {
-        return getResources(null);
-    }
-
     public static AdminResources getResources(Locale locale) {
-        if (locale == null) {
-            locale = Locale.getDefault();
-        }
+        Objects.requireNonNull(locale);
 
         if (resources == null || !locale.equals(resources.getLocale())) {
             ResourceBundle prb = ResourceBundle.getBundle("com.sun.messaging.jmq.admin.resources.AdminResources", locale);

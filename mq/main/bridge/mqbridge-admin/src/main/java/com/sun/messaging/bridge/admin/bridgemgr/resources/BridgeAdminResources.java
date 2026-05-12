@@ -19,6 +19,8 @@ package com.sun.messaging.bridge.admin.bridgemgr.resources;
 
 import java.util.ResourceBundle;
 import java.util.Locale;
+import java.util.Objects;
+
 import com.sun.messaging.jmq.util.MQResourceBundle;
 
 /**
@@ -30,14 +32,8 @@ public class BridgeAdminResources extends MQResourceBundle {
 
     private static BridgeAdminResources resources = null;
 
-    public static BridgeAdminResources getResources() {
-        return getResources(null);
-    }
-
     public static synchronized BridgeAdminResources getResources(Locale locale) {
-        if (locale == null) {
-            locale = Locale.getDefault();
-        }
+        Objects.requireNonNull(locale);
 
         if (resources == null || !locale.equals(resources.getLocale())) {
             ResourceBundle prb = ResourceBundle.getBundle("com.sun.messaging.bridge.admin.bridgemgr.resources.BridgeAdminResources", locale);

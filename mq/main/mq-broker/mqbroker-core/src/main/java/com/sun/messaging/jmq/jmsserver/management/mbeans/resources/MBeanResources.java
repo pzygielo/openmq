@@ -19,6 +19,8 @@ package com.sun.messaging.jmq.jmsserver.management.mbeans.resources;
 
 import java.util.ResourceBundle;
 import java.util.Locale;
+import java.util.Objects;
+
 import com.sun.messaging.jmq.util.MQResourceBundle;
 
 /**
@@ -30,15 +32,8 @@ public class MBeanResources extends MQResourceBundle {
 
     private static MBeanResources resources = null;
 
-    public static MBeanResources getResources() {
-        return getResources(null);
-    }
-
     public static synchronized MBeanResources getResources(Locale locale) {
-
-        if (locale == null) {
-            locale = Locale.getDefault();
-        }
+        Objects.requireNonNull(locale);
 
         if (resources == null || !locale.equals(resources.getLocale())) {
             ResourceBundle prb = ResourceBundle.getBundle("com.sun.messaging.jmq.jmsserver.management.mbeans.resources.MBeanResources", locale);

@@ -19,6 +19,8 @@ package com.sun.messaging.bridge.service.stomp.resources;
 
 import java.util.ResourceBundle;
 import java.util.Locale;
+import java.util.Objects;
+
 import com.sun.messaging.jmq.util.MQResourceBundle;
 
 /**
@@ -30,15 +32,8 @@ public class StompBridgeResources extends MQResourceBundle {
 
     private static StompBridgeResources resources = null;
 
-    public static StompBridgeResources getResources() {
-        return getResources(null);
-    }
-
     public static synchronized StompBridgeResources getResources(Locale locale) {
-
-        if (locale == null) {
-            locale = Locale.getDefault();
-        }
+        Objects.requireNonNull(locale);
 
         if (resources == null || !locale.equals(resources.getLocale())) {
             ResourceBundle b = ResourceBundle.getBundle("com.sun.messaging.bridge.service.stomp.resources.StompBridgeResources", locale);

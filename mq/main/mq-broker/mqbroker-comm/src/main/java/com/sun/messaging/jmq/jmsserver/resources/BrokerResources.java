@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2000, 2017 Oracle and/or its affiliates. All rights reserved.
- * Copyright (c) 2021, 2025 Contributors to the Eclipse Foundation
+ * Copyright (c) 2021 Contributors to the Eclipse Foundation
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -19,6 +19,8 @@ package com.sun.messaging.jmq.jmsserver.resources;
 
 import java.util.ResourceBundle;
 import java.util.Locale;
+import java.util.Objects;
+
 import com.sun.messaging.jmq.util.MQResourceBundle;
 
 /**
@@ -30,15 +32,8 @@ public class BrokerResources extends MQResourceBundle {
 
     private static BrokerResources resources = null;
 
-    public static BrokerResources getResources() {
-        return getResources(null);
-    }
-
     public static synchronized BrokerResources getResources(Locale locale) {
-
-        if (locale == null) {
-            locale = Locale.getDefault();
-        }
+        Objects.requireNonNull(locale);
 
         if (resources == null || !locale.equals(resources.getLocale())) {
             ResourceBundle prb = ResourceBundle.getBundle("com.sun.messaging.jmq.jmsserver.resources.BrokerResources", locale);

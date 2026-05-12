@@ -19,6 +19,8 @@ package com.sun.messaging.bridge.service.jms.resources;
 
 import java.util.ResourceBundle;
 import java.util.Locale;
+import java.util.Objects;
+
 import com.sun.messaging.jmq.util.MQResourceBundle;
 
 /**
@@ -31,10 +33,7 @@ public class JMSBridgeResources extends MQResourceBundle {
     private static JMSBridgeResources resources = null;
 
     public static synchronized JMSBridgeResources getResources(Locale locale) {
-
-        if (locale == null) {
-            locale = Locale.getDefault();
-        }
+        Objects.requireNonNull(locale);
 
         if (resources == null || !locale.equals(resources.getLocale())) {
             ResourceBundle b = ResourceBundle.getBundle("com.sun.messaging.bridge.service.jms.resources.JMSBridgeResources", locale);

@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2000, 2017 Oracle and/or its affiliates. All rights reserved.
- * Copyright (c) 2021, 2022 Contributors to the Eclipse Foundation
+ * Copyright (c) 2021 Contributors to the Eclipse Foundation
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -19,6 +19,8 @@ package com.sun.messaging.bridge.admin.resources;
 
 import java.util.ResourceBundle;
 import java.util.Locale;
+import java.util.Objects;
+
 import com.sun.messaging.jmq.util.MQResourceBundle;
 
 /**
@@ -30,15 +32,8 @@ public class BridgeManagerResources extends MQResourceBundle {
 
     private static BridgeManagerResources resources = null;
 
-    public static BridgeManagerResources getResources() {
-        return getResources(null);
-    }
-
     public static synchronized BridgeManagerResources getResources(Locale locale) {
-
-        if (locale == null) {
-            locale = Locale.getDefault();
-        }
+        Objects.requireNonNull(locale);
 
         if (resources == null || !locale.equals(resources.getLocale())) {
             ResourceBundle b = ResourceBundle.getBundle("com.sun.messaging.bridge.admin.resources.BridgeManagerResources", locale);
