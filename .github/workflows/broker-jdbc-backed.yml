@@ -188,5 +188,6 @@ jobs:
       if: ${{ always() && (matrix.db_vendor == 'derby') }}
       with:
         name: broker-jdbc-backed-data-${{ matrix.db_vendor }}-${{ inputs.java_version }}-${{ inputs.java_package }}
+        retention-days: 1
         path: |
           ${{ env.DERBY_DATA }}
