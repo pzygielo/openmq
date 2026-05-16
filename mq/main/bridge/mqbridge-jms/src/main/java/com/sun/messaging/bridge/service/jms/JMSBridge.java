@@ -114,7 +114,7 @@ public class JMSBridge {
     private ExecutorService _asyncStartExecutor = null;
 
     private Object _startFutureLock = new Object();
-    private LinkedHashMap _startFutures = new LinkedHashMap();
+    private LinkedHashMap<String, Future> _startFutures = new LinkedHashMap<>();
     private final CountDownLatch _startLatch = new CountDownLatch(1);
 
     public void init(BridgeContext bc, String name, boolean reset) throws Exception {
@@ -524,8 +524,8 @@ public class JMSBridge {
         synchronized (_startFutureLock) {
             if (!_startFutures.isEmpty()) {
 
-                String[] keys = (String[]) _startFutures.keySet().toArray(new String[_startFutures.size()]);
-                Future future = (Future) _startFutures.get(keys[0]);
+                String[] keys = _startFutures.keySet().toArray(new String[_startFutures.size()]);
+                Future future = _startFutures.get(keys[0]);
                 if (future.isDone()) {
                     _startFutures.remove(keys[0]);
                     checkStartFuture(cmd, linkName, cancelWait);
