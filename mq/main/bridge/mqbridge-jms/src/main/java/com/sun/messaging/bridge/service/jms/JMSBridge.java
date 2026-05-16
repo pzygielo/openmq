@@ -114,7 +114,7 @@ public class JMSBridge {
     private ExecutorService _asyncStartExecutor = null;
 
     private Object _startFutureLock = new Object();
-    private LinkedHashMap<String, Future> _startFutures = new LinkedHashMap<>();
+    private final LinkedHashMap<String, Future> _startFutures = new LinkedHashMap<>();
     private final CountDownLatch _startLatch = new CountDownLatch(1);
 
     public void init(BridgeContext bc, String name, boolean reset) throws Exception {
