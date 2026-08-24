@@ -21,6 +21,7 @@ import java.io.*;
 import java.net.*;
 
 import com.sun.messaging.jmq.jmsserver.Globals;
+import com.sun.messaging.jmq.jmsserver.net.tls.TLSProtocol;
 import com.sun.messaging.jmq.jmsserver.resources.BrokerResources;
 import com.sun.messaging.jmq.util.net.MQServerSocketFactory;
 import com.sun.messaging.jmq.util.log.Logger;
@@ -63,17 +64,11 @@ class ClusterServiceListener extends Thread {
 
         ServerSocketFactory sslfactory = null;
         try {
-            Class TLSProtocolClass = Class.forName("com.sun.messaging.jmq.jmsserver.net.tls.TLSProtocol");
-
             if (ClusterImpl.DEBUG) {
                 logger.log(logger.DEBUG, "ClusterImpl.initSSLListener. " + "Initializing SSLServerSocketFactory");
             }
 
-            /*
-             * SSLServerSocketFactory ssf = (SSLServerSocketFactory) TLSProtocol.getServerSocketFactory();
-             */
-            java.lang.reflect.Method m = TLSProtocolClass.getMethod("getServerSocketFactory", (Class[]) null);
-            sslfactory = (ServerSocketFactory) m.invoke(null, (Object[]) null);
+            sslfactory = TLSProtocol.getServerSocketFactory();
         } catch (Exception e) {
             Throwable t = e;
             if (e instanceof java.lang.reflect.InvocationTargetException) {
