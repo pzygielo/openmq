@@ -1342,28 +1342,13 @@ public class ClusterImpl implements Cluster, ClusterListener {
 
     @Override
     public boolean isReachable(BrokerAddress remote, int timeout) throws IOException {
-        Class inetc = null;
-        java.lang.reflect.Method m = null;
-        try {
-            inetc = Class.forName("java.net.InetAddress");
-            m = inetc.getMethod("isReachable", java.lang.Integer.TYPE);
-            boolean b = ((Boolean) m.invoke(((BrokerAddressImpl) remote).getHost(), Integer.valueOf(timeout * 1000))).booleanValue();
-            if (b) {
-                logger.log(Logger.INFO, br.getKString(br.I_CLUSTER_REMOTE_IP_REACHABLE, remote, Integer.valueOf(timeout)));
-            } else {
-                logger.log(Logger.INFO, br.getKString(br.I_CLUSTER_REMOTE_IP_UNREACHABLE, remote, Integer.valueOf(timeout)));
-            }
-            return b;
-
-        } catch (NoSuchMethodException e) {
-            if (DEBUG) {
-                logger.logStack(Logger.WARNING, e.getMessage(), e);
-            }
-            return true;
-        } catch (Exception e) {
-            logger.logStack(Logger.WARNING, e.getMessage(), e);
-            return true;
+        boolean b = ((BrokerAddressImpl) remote).getHost().isReachable(Integer.valueOf(timeout * 1000));
+        if (b) {
+            logger.log(Logger.INFO, br.getKString(br.I_CLUSTER_REMOTE_IP_REACHABLE, remote, Integer.valueOf(timeout)));
+        } else {
+            logger.log(Logger.INFO, br.getKString(br.I_CLUSTER_REMOTE_IP_UNREACHABLE, remote, Integer.valueOf(timeout)));
         }
+        return b;
     }
 
     /**
