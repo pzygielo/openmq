@@ -18,7 +18,6 @@
 
 package com.sun.messaging.jmq.util;
 
-import java.lang.reflect.*;
 import java.util.Hashtable;
 import java.util.Vector;
 import java.util.Map;
@@ -76,18 +75,13 @@ public class SupportUtil {
 
     public static String getStackTrace(String prefix) {
         Thread thr = Thread.currentThread();
-        try {
-            Method m = Thread.class.getMethod("getStackTrace");
-            StackTraceElement[] stes = (StackTraceElement[]) m.invoke(thr);
-            StringBuilder retstr = new StringBuilder();
-            retstr.append(prefix).append(thr).append(" 0x").append(Long.toHexString(thr.hashCode())).append('\n');
-            for (StackTraceElement ste : stes) {
-                retstr.append(prefix).append('\t').append(ste).append('\n');
-            }
-            return retstr.toString();
-        } catch (Throwable t) { //NOPMD
-            return prefix + "Can not getStackTrace " + t;
+        StackTraceElement[] stes = thr.getStackTrace();
+        StringBuilder retstr = new StringBuilder();
+        retstr.append(prefix).append(thr).append(" 0x").append(Long.toHexString(thr.hashCode())).append('\n');
+        for (StackTraceElement ste : stes) {
+            retstr.append(prefix).append('\t').append(ste).append('\n');
         }
+        return retstr.toString();
     }
 
     public static String getStackTraceString(Throwable e) {
