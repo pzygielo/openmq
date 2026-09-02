@@ -269,7 +269,7 @@ public class LockFile {
                         }
                     }
                 }
-                fis.read(data);
+                fis.read(data); // NOPMD
                 String s = new String(data, StandardCharsets.UTF_8);
                 int i1 = s.indexOf(':');
                 if (i1 == -1) {

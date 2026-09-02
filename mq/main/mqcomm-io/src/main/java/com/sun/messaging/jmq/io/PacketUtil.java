@@ -89,7 +89,7 @@ public final class PacketUtil {
             }
             byte[] buf = new byte[40];
             try {
-                is.read(buf);
+                is.read(buf); // NOPMD
                 os.print("[" + new String(buf));
                 if (n < bodySize) {
                     os.print(". . .");

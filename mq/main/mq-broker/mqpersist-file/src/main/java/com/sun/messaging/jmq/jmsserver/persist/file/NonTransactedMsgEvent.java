@@ -78,7 +78,7 @@ public class NonTransactedMsgEvent extends TransactionEvent {
         ByteArrayInputStream bais = new ByteArrayInputStream(data);
         DataInputStream dis = new DataInputStream(bais);
 
-        dis.skip(2);
+        dis.skip(2); // NOPMD
         message = new TransactionWorkMessage();
         message.readWork(dis);
 

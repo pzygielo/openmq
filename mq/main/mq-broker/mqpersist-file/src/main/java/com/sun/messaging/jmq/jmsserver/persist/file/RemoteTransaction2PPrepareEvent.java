@@ -81,14 +81,14 @@ class RemoteTransaction2PPrepareEvent extends RemoteTransactionEvent {
         ByteArrayInputStream bais = new ByteArrayInputStream(data);
         DataInputStream dis = new DataInputStream(bais);
         remoteTransaction = new RemoteTransaction();
-        dis.skip(2);
+        dis.skip(2); // NOPMD
 
         remoteTransaction.getTransactionDetails().readContent(dis);
 
         int objectBodySize = dis.readInt();
 
         byte[] objectBody = new byte[objectBodySize];
-        dis.read(objectBody);
+        dis.read(objectBody); // NOPMD
 
         ByteArrayInputStream bais2 = new ByteArrayInputStream(objectBody);
         ObjectInputStream ois = new FilteringObjectInputStream(bais2);

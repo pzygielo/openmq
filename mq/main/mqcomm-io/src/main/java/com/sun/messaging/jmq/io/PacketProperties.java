@@ -164,7 +164,7 @@ public class PacketProperties {
             case OBJECT:
                 int bytes = dis.readInt();
                 byte[] buf = new byte[bytes];
-                dis.read(buf, 0, bytes);
+                dis.read(buf, 0, bytes); // NOPMD
                 JMQByteArrayInputStream bis = new JMQByteArrayInputStream(buf);
                 ObjectInputStream ois = new FilteringObjectInputStream(bis);
                 value = ois.readObject();

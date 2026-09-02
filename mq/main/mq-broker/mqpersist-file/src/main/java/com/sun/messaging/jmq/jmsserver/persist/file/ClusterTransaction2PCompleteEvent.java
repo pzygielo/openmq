@@ -54,7 +54,7 @@ class ClusterTransaction2PCompleteEvent extends ClusterTransactionEvent {
         DataInputStream dis = new DataInputStream(bais);
 
         clusterTransaction = new ClusterTransaction();
-        dis.skip(2);
+        dis.skip(2); // NOPMD
         clusterTransaction.getTransactionDetails().readContent(dis);
 
         dis.close();

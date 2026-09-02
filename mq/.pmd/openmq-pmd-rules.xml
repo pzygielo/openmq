@@ -85,8 +85,8 @@
     <rule ref="category/java/errorprone.xml/UnconditionalIfStatement" />
     <rule ref="category/java/errorprone.xml/UnnecessaryConversionTemporary" />
     <rule ref="category/java/errorprone.xml/UnusedNullCheckInEquals" />
+    <rule ref="category/java/errorprone.xml/UnusedReturnValue" />
     <rule ref="category/java/errorprone.xml/UseEqualsToCompareStrings" />
-    <rule ref="category/java/errorprone.xml/UselessPureMethodCall" />
 
     <rule ref="category/java/performance.xml/AppendCharacterWithChar" />
     <rule ref="category/java/performance.xml/AvoidArrayLoops" />

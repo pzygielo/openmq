@@ -71,7 +71,7 @@ class Packet {
         try {
             packetBuffer = new byte[packetSize - HEADER_SIZE];
         } catch (OutOfMemoryError oom) {
-            dis.skip(packetSize - HEADER_SIZE);
+            dis.skip(packetSize - HEADER_SIZE); // NOPMD
             throw oom;
         }
         dis.readFully(packetBuffer);

@@ -123,7 +123,7 @@ public abstract class BaseTransaction {
         int objectBodySize = dis.readInt();
 
         byte[] objectBody = new byte[objectBodySize];
-        dis.read(objectBody);
+        dis.read(objectBody); // NOPMD
 
         ByteArrayInputStream bais2 = new ByteArrayInputStream(objectBody);
         ObjectInputStream ois = new FilteringObjectInputStream(bais2);

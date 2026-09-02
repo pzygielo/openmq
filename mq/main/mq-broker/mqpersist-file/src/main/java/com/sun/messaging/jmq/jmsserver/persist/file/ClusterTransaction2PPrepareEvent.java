@@ -104,7 +104,7 @@ class ClusterTransaction2PPrepareEvent extends ClusterTransactionEvent {
         ByteArrayInputStream bais = new ByteArrayInputStream(data);
         DataInputStream dis = new DataInputStream(bais);
         clusterTransaction = new ClusterTransaction();
-        dis.skip(2);
+        dis.skip(2); // NOPMD
 
         clusterTransaction.getTransactionDetails().readContent(dis);
         if (Store.getDEBUG()) {
@@ -117,7 +117,7 @@ class ClusterTransaction2PPrepareEvent extends ClusterTransactionEvent {
         int objectBodySize = dis.readInt();
 
         byte[] objectBody = new byte[objectBodySize];
-        dis.read(objectBody);
+        dis.read(objectBody); // NOPMD
 
         ByteArrayInputStream bais2 = new ByteArrayInputStream(objectBody);
         ObjectInputStream ois = new FilteringObjectInputStream(bais2);

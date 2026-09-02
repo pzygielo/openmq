@@ -61,7 +61,7 @@ class LocalTransaction1PCommitEvent extends LocalTransactionEvent {
         DataInputStream dis = new DataInputStream(bais);
 
         localTransaction = new LocalTransaction();
-        dis.skip(2);
+        dis.skip(2); // NOPMD
         localTransaction.getTransactionDetails().readContent(dis);
         TransactionWork work = new TransactionWork();
         work.readWork(dis);

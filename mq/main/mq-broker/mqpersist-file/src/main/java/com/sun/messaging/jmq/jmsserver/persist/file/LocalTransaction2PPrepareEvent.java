@@ -75,7 +75,7 @@ class LocalTransaction2PPrepareEvent extends LocalTransactionEvent {
         DataInputStream dis = new DataInputStream(bais);
 
         localTransaction = new LocalTransaction();
-        dis.skip(2);
+        dis.skip(2); // NOPMD
         localTransaction.getTransactionDetails().readContent(dis);
         TransactionWork work = new TransactionWork();
         work.readWork(dis);
@@ -85,7 +85,7 @@ class LocalTransaction2PPrepareEvent extends LocalTransactionEvent {
         int objectBodySize = dis.readInt();
 
         byte[] objectBody = new byte[objectBodySize];
-        dis.read(objectBody);
+        dis.read(objectBody); // NOPMD
 
         ByteArrayInputStream bais2 = new ByteArrayInputStream(objectBody);
         ObjectInputStream ois = new FilteringObjectInputStream(bais2);

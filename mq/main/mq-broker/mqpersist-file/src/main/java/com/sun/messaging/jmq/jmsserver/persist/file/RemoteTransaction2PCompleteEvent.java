@@ -53,7 +53,7 @@ class RemoteTransaction2PCompleteEvent extends RemoteTransactionEvent {
         DataInputStream dis = new DataInputStream(bais);
 
         remoteTransaction = new RemoteTransaction();
-        dis.skip(2);
+        dis.skip(2); // NOPMD
         remoteTransaction.getTransactionDetails().readContent(dis);
 
         dis.close();

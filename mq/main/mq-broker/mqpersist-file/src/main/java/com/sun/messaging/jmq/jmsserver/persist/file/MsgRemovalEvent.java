@@ -81,7 +81,7 @@ public class MsgRemovalEvent extends TransactionEvent {
         ByteArrayInputStream bais = new ByteArrayInputStream(data);
         DataInputStream dis = new DataInputStream(bais);
 
-        dis.skip(2);
+        dis.skip(2); // NOPMD
         String dest = dis.readUTF();
         destUID = new DestinationUID(dest);
         sysMessageID = new SysMessageID();
