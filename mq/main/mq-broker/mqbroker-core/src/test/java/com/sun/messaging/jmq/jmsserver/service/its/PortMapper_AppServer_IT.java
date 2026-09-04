@@ -14,9 +14,11 @@
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  */
 
-package com.sun.messaging.jmq.jmsserver.service;
+package com.sun.messaging.jmq.jmsserver.service.its;
 
 import java.nio.channels.SocketChannel;
+
+import com.sun.messaging.jmq.jmsserver.service.PortMapper;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
