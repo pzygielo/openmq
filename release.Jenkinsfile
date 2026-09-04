@@ -224,7 +224,7 @@ pipeline {
               GIT_COMMIT=$(git rev-parse @)
 
               ./mvnw -V -U -C -s /home/jenkins/.m2/settings.xml \
-                  -DskipTests -Ddoclint=none \
+                  -DskipTests -DskipITs -Ddoclint=none \
                   -Poss-release -Psbom -Pcbi-jarsign \
                   -pl -docs,-docs/mq-shared-doc-resources,-docs/mq-admin-guide,-docs/mq-dev-guide-c,-docs/mq-dev-guide-java,-docs/mq-dev-guide-jmx,-docs/mq-release-notes,-docs/mq-tech-over \
                   -Dbuild.letter=r -Dbuild.number=${GIT_COMMIT}/${BUILD_NUMBER} \
