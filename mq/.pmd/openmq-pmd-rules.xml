@@ -30,8 +30,6 @@
     <rule ref="category/java/bestpractices.xml/UnusedPrivateField" />
     <rule ref="category/java/bestpractices.xml/UnusedPrivateMethod" />
 
-    <rule ref="category/java/codestyle.xml/AvoidProtectedFieldInFinalClass" />
-    <rule ref="category/java/codestyle.xml/AvoidProtectedMethodInFinalClassNotExtending" />
     <rule ref="category/java/codestyle.xml/EmptyControlStatement" />
     <rule ref="category/java/codestyle.xml/ExtendsObject" />
     <rule ref="category/java/codestyle.xml/IdenticalCatchBranches" />
@@ -49,6 +47,7 @@
     <rule ref="category/java/codestyle.xml/UselessQualifiedThis" />
 
     <rule ref="category/java/design.xml/AvoidUncheckedExceptionsInSignatures" />
+    <rule ref="category/java/design.xml/ProtectedMemberInFinalClass" />
     <rule ref="category/java/design.xml/SimplifiedTernary" />
     <rule ref="category/java/design.xml/UselessOverridingMethod" />
 
